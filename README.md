@@ -132,3 +132,5 @@ Copyright (c) 2026 Mit Patel
 <div align="center">
 <sub>Built for MLH Global Hack Week · Hacktoberfest 2026 · event 14553</sub>
 </div>
+
+
