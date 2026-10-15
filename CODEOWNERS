@@ -1,0 +1,29 @@
+# CODEOWNERS
+# ---------------------------------------------------------------------------
+# Defines who is automatically requested for review when a pull request
+# touches matching paths. When "Require review from Code Owners" is enabled
+# on the protected `main` branch, at least one owner below must approve.
+#
+# Rules (last matching pattern wins):
+#   *  = every file      @handle = GitHub username or @org/team
+#
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# ---------------------------------------------------------------------------
+
+# Default owner for the whole repository
+*                       @meetr1912
+
+# CI, automation, and dev environment
+/.github/               @meetr1912
+/.devcontainer/         @meetr1912
+
+# Application source and tests
+/src/                   @meetr1912
+/tests/                 @meetr1912
+
+# Documentation
+*.md                    @meetr1912
+
+# Repository metadata
+/CODEOWNERS             @meetr1912
+/LICENSE                @meetr1912

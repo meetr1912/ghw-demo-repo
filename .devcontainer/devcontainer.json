@@ -1,0 +1,46 @@
+{
+  // ghw-demo-repo — Codespaces / VS Code dev container
+  // Docs: https://containers.dev/  and  https://docs.github.com/codespaces
+  "name": "ghw-demo-repo (Python 3.12)",
+
+  // A ready-to-go image: Python 3.12 on Debian with git, common CLI tools, and
+  // the non-root "vscode" user Codespaces expects.
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+  "features": {
+    // Niceties that make the Codespace feel customised.
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true
+    }
+  },
+
+  // Runs once when the container is first created: install dev dependencies.
+  "postCreateCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt",
+
+  "customizations": {
+    "vscode": {
+      // Editor settings applied automatically to the Codespace.
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": ["tests"],
+        "editor.formatOnSave": true,
+        "editor.rulers": [88],
+        "files.trimTrailingWhitespace": true
+      },
+      // Extensions pre-installed in the Codespace.
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "editorconfig.editorconfig",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+
+  // Run as the standard Codespaces user.
+  "remoteUser": "vscode"
+}
